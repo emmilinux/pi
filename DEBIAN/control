@@ -1,0 +1,12 @@
+Package: pi-pacote-inteligente
+Version: 1.0
+Section: 
+Priority: optional
+Maintainer: Jefferson Rocha <lrcjefferson@gmail.com>
+Architecture: amd64
+Depends: apt,
+         dpkg
+Installed-Size: 100 
+Homepage: www.emmilinux.com.br
+Description: Pacote inteligente, ajuda aos iniciantes no gerenciamento de pacotes de uma forma fácil.
+

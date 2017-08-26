@@ -1,0 +1,8 @@
+#!/bin/bash
+# Este script faz parte do pi (Pacote inteligente).
+# Foi desenvolvido para servir os iniciantes
+# Que não entendem a lingua inglesa.
+# Criado por Jefferson Rocha <lrcjefferson@gmail.com>
+# Projeto Emmi www.emmilinux.com.br
+
+aptitude full-upgrade

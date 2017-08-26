@@ -1,0 +1,142 @@
+#!/bin/bash
+###############
+# pi (Pacote inteligente).
+# Versão: 1.0
+# Criado por Jefferson Rocha <lrcjefferson@gmail.com>
+# Projeto Emmi <www.emmilinux.com.br>
+################
+# INFORMAÇÕES:
+# pi foi desenvolvido para servir os iniciantes,
+# que possuem uma certa dificuldade com o gerenciador CLI.
+# E claro dificuldade com o inglês.
+# pi é um gerenciador totalmente traduzido em PT-BR
+# e muito documentado!
+
+
+#############
+# Váriaveis
+############
+# Opções
+INSTALAR=". /usr/share/pi/src/instalar"
+REMOVER=". /usr/share/pi/src/remover"
+PURGE=". /usr/share/pi/src/purge"
+PROCURAR=". /usr/share/pi/src/procurar"
+MOSTRAR=". /usr/share/pi/src/mostrar"
+VERSAO=". /usr/share/pi/src/versao"
+LIMPAR=". /usr/share/pi/src/limpar"
+ALIMPAR=". /usr/share/pi/src/autolimpar"
+REINSTALAR=". /usr/share/pi/src/reinstalar"
+ATUALIZAR=". /usr/share/pi/src/atualizar"
+ASEGURA=". /usr/share/pi/src/atualizacao-segura"
+ACOMPLETA=". /usr/share/pi/src/atualizacao-completa"
+IDEP=". /usr/share/pi/src/instalar-dep"
+
+
+
+####################
+# Começo do Script
+####################
+
+case $1 in
+
+#############
+# pi --ajuda
+#############
+"--ajuda")
+	 echo "Modo de uso: pi [opção]"
+	 echo
+	 echo "OPÇÕES:"
+	 echo
+	 echo "================"
+	 echo "PACOTES         "
+	 echo "================"
+	 echo "instalar       - Instala pacotes."
+         echo "remover        - Remove Pacotes." 
+	 echo "reinstalar     - Baixa e (possivelmente) reinstala um pacote já instalado."
+	 echo "purge          - Remove pacotes e seus arquivos de configuração."
+	 echo "procurar       - Pesquisa por um pacote pelo nome e/ou expressão."
+	 echo "mostrar        - Verifica se um pacote esta instalado."
+	 echo "instalar-dep   - Instalar as dependências de compilação de pacotes."
+	 echo "versao         - Verifica versão do pacote no repositório."
+	 echo
+	 echo "================"
+	 echo "LIMPEZA"
+	 echo "================"
+	 echo "limpar        - Apaga arquivos de pacotes baixados."
+	 echo "autolimpar    - Apaga arquivos antigos de pacotes baixados."
+	 echo
+	 echo "================"
+	 echo "ATUALIZAÇÃO     "
+	 echo "================"
+	 echo "atualizar             - Atualiza listas de pacotes"
+	 echo "atualizacao-segura    - Executa uma atualização segura."
+	 echo "atualizacao-completa  - Executa uma atualização, possivelmente instalando e removendo pacotes."
+	 echo
+;;
+
+#############
+# pi --versao
+#############
+"--versao")
+	 echo "Pacote Inteligente está na versão 1.0."
+;;
+
+###############
+# Opções do pi
+###############
+"instalar")
+	   $INSTALAR
+;;
+
+"remover")
+	  $REMOVER
+;;
+
+"purge")
+	$PURGE
+;;
+
+"procurar")
+	   $PROCURAR
+;;
+
+"mostrar")
+	  $MOSTRAR
+;;
+
+"versao")
+	 $VERSAO
+;;
+
+"limpar")
+	 $LIMPAR
+;;
+
+"autolimpar")
+	     $ALIMPAR
+;;
+
+"reinstalar")
+	     $REINSTALAR
+;;
+
+"atualizar")
+	    $ATUALIZAR
+;;
+
+"atualizacao-segura")
+	             $ASEGURA
+;;
+
+"atualizacao-completa")
+	               $ACOMPLETA
+;;
+
+"instalar-dep")
+	       $IDEP
+;;
+
+*)
+ echo "Consulte --ajuda para maiores informações."
+;;
+esac
