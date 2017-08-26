@@ -42,7 +42,47 @@ case $1 in
 #############
 # pi --ajuda
 #############
-"--ajuda")
+--ajuda | --help)
+
+######### Se o usuário usar --help irá cair aqui
+if [ "$1" = "--help" ]
+then
+         echo "Modo de uso: pi [opção]"
+         echo
+         echo "OPÇÕES:"
+         echo
+         echo "================"
+         echo "PACOTES         "
+         echo "================"
+         echo "install        - Instala pacotes."
+         echo "remove         - Remove Pacotes." 
+         echo "reinstall      - Baixa e (possivelmente) reinstala um pacote já instalado."
+         echo "purge          - Remove pacotes e seus arquivos de configuração."
+         echo "search         - Pesquisa por um pacote pelo nome e/ou expressão."
+         echo "show           - Verifica se um pacote esta instalado."
+         echo "build-dep      - Instalar as dependências de compilação de pacotes."
+         echo "versions       - Verifica versão do pacote no repositório."
+         echo
+         echo "================"
+         echo "LIMPEZA"
+         echo "================"
+         echo "clean          - Apaga arquivos de pacotes baixados."
+         echo "autoclean      - Apaga arquivos antigos de pacotes baixados."
+         echo
+         echo "================"
+         echo "ATUALIZAÇÃO     "
+         echo "================"
+         echo "update                - Atualiza listas de pacotes"
+         echo "safe-upgrade          - Executa uma atualização segura."
+         echo "full-upgrade          - Executa uma atualização, possivelmente instalando e removend$"
+         echo
+exit
+fi
+# Fim opção --help
+
+
+######### Inicio opção --ajuda
+
 	 echo "Modo de uso: pi [opção]"
 	 echo
 	 echo "OPÇÕES:"
@@ -74,69 +114,74 @@ case $1 in
 	 echo
 ;;
 
-#############
-# pi --versao
-#############
-"--versao")
+
+####### pi --versao
+--versao | --version)
 	 echo "Pacote Inteligente está na versão 1.0."
 ;;
+
 
 ###############
 # Opções do pi
 ###############
-"instalar")
+
+instalar | install)
 	   $INSTALAR
 ;;
 
-"remover")
+remover | remove)
 	  $REMOVER
 ;;
 
-"purge")
+purge)
 	$PURGE
 ;;
 
-"procurar")
+procurar | search)
 	   $PROCURAR
 ;;
 
-"mostrar")
+mostrar | show)
 	  $MOSTRAR
 ;;
 
-"versao")
+versao | versions)
 	 $VERSAO
 ;;
 
-"limpar")
+limpar | clean)
 	 $LIMPAR
 ;;
 
-"autolimpar")
+autolimpar | autoclean)
 	     $ALIMPAR
 ;;
 
-"reinstalar")
+reinstalar | reinstall)
 	     $REINSTALAR
 ;;
 
-"atualizar")
+atualizar | update)
 	    $ATUALIZAR
 ;;
 
-"atualizacao-segura")
+atualizacao-segura | safe-upgrade)
 	             $ASEGURA
 ;;
 
-"atualizacao-completa")
+atualizacao-completa | full-upgrade)
 	               $ACOMPLETA
 ;;
 
-"instalar-dep")
+instalar-dep | build-dep)
 	       $IDEP
 ;;
 
 *)
- echo "Consulte --ajuda para maiores informações."
+  echo "Consulte --ajuda para maiores informações"
 ;;
+
 esac
+
+# Caso a opção seja usada errada
+
