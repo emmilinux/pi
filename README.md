@@ -5,4 +5,5 @@
 <a href="https://github.com/emmilinux/pi/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/></a></p>
 
 # Logo
-![alt tag](https://raw.githubusercontent.com/emmilinux/pi/master/pilogogit.png)
+<p align="center">
+![alt tag](https://raw.githubusercontent.com/emmilinux/pi/master/pilogogit.png)</p>
