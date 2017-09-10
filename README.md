@@ -6,5 +6,5 @@
 
 # Logo
 <p align="center">
-![alt tag](https://raw.githubusercontent.com/emmilinux/pi/master/pilogogit.png)
+ <img src="https://raw.githubusercontent.com/emmilinux/pi/master/pilogogit.png" alt="PI logo"/>
 </p>
